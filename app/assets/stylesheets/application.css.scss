@@ -10,6 +10,39 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
- *= require_self
  */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/**
+                  Tools
+ **/
+
+@import "0-tools/_reset.scss";
+
+/**
+                  base
+ **/
+
+@import "1-base/_config.scss";
+
+
+/**
+                  Layouts
+ **/
+
+
+
+/**
+                  Modules
+ **/
+
+@import "3-modules/_header.scss";
+@import "3-modules/_content.scss";
+@import "3-modules/_footer.scss";
+@import "3-modules/_about.scss";
+@import "3-modules/_contact.scss";
+@import "3-modules/_categorie.scss";
+@import "3-modules/_article.scss";
+@import "3-modules/_popup.scss";
