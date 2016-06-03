@@ -13,5 +13,29 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
+//= require masonry/jquery.masonry
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function(){
+
+	var $container = $('.masonry-container');
+		$container.masonry({
+			columnWidth: 'article',
+			itemSelector: 'article',
+			isFitWidth: true
+		});
+
+	$('a.popup-link').on('click',function(e){
+		e.preventDefault();
+		console.log(e.target.hash);
+		$id = e.target.hash;
+		$('.popup').hide();
+		$($id).show();
+	});
+
+	$('.cancel').on('click',function(e){
+		$('.cancel').parent().parent().hide();
+	});
+
+});

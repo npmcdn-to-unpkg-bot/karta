@@ -12,6 +12,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'simple_form', '~> 3.2', '>= 3.2.1'
 gem 'slim', '~> 3.0', '>= 3.0.7'
+gem 'masonry-rails', '~> 0.2.4'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 
