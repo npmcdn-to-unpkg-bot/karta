@@ -1,0 +1,15 @@
+.container.container-no-gutter
+	.row
+		.col-md-6.col-md-offset-3
+			= simple_form_for @post do |f|
+				.group-form
+					= f.input :image, as: :file
+				.form-group
+					= f.input :title
+				.form-group
+					= f.input :content
+				.form-group
+					= f.submit
+
+javascript:
+	 $('textarea').froalaEditor()

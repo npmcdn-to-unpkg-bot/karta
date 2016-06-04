@@ -1,0 +1,12 @@
+.article style="position: relative; background: url(#{@post.image}) no-repeat; background-size: contain;"
+	.container.container-no-gutter
+		.row
+			.col-md-8.col-md-offset-2.article-content
+				.article-title
+					h1 = @post.title
+				.article-body
+					= simple_format(@post.content, {}, :sanitize => false)
+
+				.btn-group
+					= link_to 'Edit', edit_post_path(@post), class: 'btn btn-primary'
+					= link_to 'Cancel', root_path , class: 'btn btn-danger'
