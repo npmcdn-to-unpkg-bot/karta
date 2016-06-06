@@ -14,7 +14,7 @@ gem 'simple_form', '~> 3.2', '>= 3.2.1'
 gem 'slim', '~> 3.0', '>= 3.0.7'
 gem 'masonry-rails', '~> 0.2.4'
 gem 'paperclip', '~> 4.3', '>= 4.3.6'
-gem 'wysiwyg-rails', '~> 2.3', '>= 2.3.1'
+gem 'ckeditor', '~> 4.1', '>= 4.1.6'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 

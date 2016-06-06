@@ -5,7 +5,7 @@
 				.article-title
 					h1 = @post.title
 				.article-body
-					= simple_format(@post.content, {}, :sanitize => false)
+					= simple_format(@post.content,{}, wrapper_tag: "div")
 
 				.btn-group
 					= link_to 'Edit', edit_post_path(@post), class: 'btn btn-primary'

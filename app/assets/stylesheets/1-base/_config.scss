@@ -44,16 +44,20 @@ blockquote{
 	font-size: 18px;
 	font-weight: 600;
 	line-height: 29px;
-	margin-bottom: 40px;
+	//margin-bottom: 40px;
 
 	&:after{
 		content: '';
 		position: absolute;
-		top: 19px;
+		top: 47px;
 		left: -100px;
 		width: 75px;
 		height: 1px;
 		background-color: #000;
+	}
+
+	p{
+		margin-bottom: 0 !important;
 	}
 
 }
