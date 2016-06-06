@@ -2,115 +2,41 @@
 		section.content-header
 			.container
 				.row.no-gutter
-					article.col-md-6
-						.thumb__content-header
-							img src="img/thumb-1.jpg" alt="the big thumb of content's header"
-						.infos__content-header
-							.cat__content-header category
-							.date__content-header May 21,2016
-							.h2__content-header
-								a href="#" Folly words widow one downs few age every
-					article.col-md-6
-						.thumb__content-header
-							img src="img/thumb-2.jpg" alt="the big thumb of content's header"
-						.infos__content-header
-							.cat__content-header category
-							.date__content-header May 21,2016
-							.h2__content-header
-								a href="#" He seemed denote except as oppose do spring my
-					article.col-md-6
-						.thumb__content-header
-							img src="img/thumb-3.jpg" alt="the big thumb of content's header"
-						.infos__content-header
-							.cat__content-header category
-							.date__content-header May 21,2016
-							.h2__content-header
-								a href="#" Saw met applauded favourite deficient
+					- @Posts_hd.each do |post_hd|
+						article.col-md-6
+							.thumb__content-header
+								= image_tag post_hd.image.url
+							.infos__content-header
+								.cat__content-header category
+								.date__content-header = post_hd.created_at.strftime("%B %d, %Y")
+								.h2__content-header
+									= link_to post_hd.title, post_hd
+
+
 
 		section.content-body
 			.container.container-no-gutter
-				.row.masonry-container
-					article.col-md-4.masonry-item
-						.thumb__content-body
-							img src="img/article-1.jpg" alt="the big thumb of content's header"
-						.infos__content-body
-							.cat__content-body category
-							.date__content-body May 21,2016
-							.h2__content-body
-								a href="#" Between any may mention evening age shortly can ability regular
-					article.col-md-4.masonry-item
-						.thumb__content-body
-							img src="img/article-2.jpg" alt="the big thumb of content's header"
-						.infos__content-body
-							.cat__content-body category
-							.date__content-body May 21,2016
-							.h2__content-body
-								a href="#" Farther related bed and passage comfort civilly
-					article.col-md-4.masonry-item
-						.thumb__content-body
-							img src="img/article-3.jpg" alt="the big thumb of content's header"
-						.infos__content-body
-							.cat__content-body category
-							.date__content-body May 21,2016
-							.h2__content-body
-								a href="#" Age why the therefore education unfeeling for arranging
-					article.col-md-4.masonry-item
-						.thumb__content-body
-							img src="img/article-4.jpg" alt="the big thumb of content's header"
-						.infos__content-body
-							.cat__content-body category
-							.date__content-body May 21,2016
-							.h2__content-body
-								a href="#" Breakfast procuring nay end allowance assurance frankness
-					article.col-md-4.masonry-item
-						.thumb__content-body
-							img src="img/article-5.jpg" alt="the big thumb of content's header"
-						.infos__content-body
-							.cat__content-body category
-							.date__content-body May 21,2016
-							.h2__content-body
-								a href="#" Folly words widow one downs few age every seven
-					article.col-md-4.masonry-item
-						.thumb__content-body
-							img src="img/article-6.jpg" alt="the big thumb of content's header"
-						.infos__content-body
-							.cat__content-body category
-							.date__content-body May 21,2016
-							.h2__content-body
-								a href="#" Saw met applauded favourite deficient
-					article.col-md-4.masonry-item
-						.thumb__content-body
-							img src="img/article-7.jpg" alt="the big thumb of content's header"
-						.infos__content-body
-							.cat__content-body category
-							.date__content-body May 21,2016
-							.h2__content-body
-								a href="#"Certainty listening no no behaviour existence assurance situation is
-					article.col-md-4.masonry-item
-						.thumb__content-body
-							img src="img/article-8.jpg" alt="the big thumb of content's header"
-						.infos__content-body
-							.cat__content-body category
-							.date__content-body May 21,2016
-							.h2__content-body
-								a href="#" Between any may mention evening age shortly can ability regular
-					article.col-md-4.masonry-item
-						.thumb__content-body
-							img src="img/article-9.jpg" alt="the big thumb of content's header"
-						.infos__content-body
-							.cat__content-body category
-							.date__content-body May 21,2016
-							.h2__content-body
-								a href="#" Looked before we an on merely
-					article.col-md-4.masonry-item
-						.thumb__content-body
-							img src="img/article-10.jpg" alt="the big thumb of content's header"
-						.infos__content-body
-							.cat__content-body category
-							.date__content-body May 21,2016
-							.h2__content-body
-								a href="#" He seemed denote except as oppose do spring my
+				.row.masonry-container.transitions-enabled
+					- @Posts.each do |post|
+						article.col-md-4.masonry-item
+							.thumb__content-body
+								= image_tag post.image.url(:medium)
+							.infos__content-body
+								.cat__content-body category
+								.date__content-body = post.created_at.strftime("%B %d, %Y")
+								.h2__content-body
+									=link_to post.title , post
+
 
 				.row
 					.col-md-4.col-md-offset-4
 						a.load__content-body href="#" load more
+
+javascript:
+	var $container = $('.masonry-container');
+		$container.imagesLoaded(function(){
+			$container.masonry({
+				columnWidth: 'article',
+				itemSelector: 'article',
+			});
+		});

@@ -13,19 +13,21 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
-//= require masonry/jquery.masonry
-//= require ckeditor/init
+//= require jquery.turbolinks
 //= require turbolinks
+// require imagesloaded
+// require masonry/jquery.masonry
+//= require ckeditor/init
 //= require_tree .
 
 $(document).ready(function(){
 
-	var $container = $('.masonry-container');
-		$container.masonry({
-			columnWidth: 'article',
-			itemSelector: 'article',
-			isFitWidth: true
-		});
+		//$('.masonry-container').masonry({
+		//	columnWidth: 'article',
+		//	//itemSelector: 'article',
+		//	//isFitWidth: true
+		//});
+
 
 	$('a.popup-link').on('click',function(e){
 		e.preventDefault();
